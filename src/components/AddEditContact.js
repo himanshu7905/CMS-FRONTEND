@@ -12,7 +12,7 @@ const AddEditContact = () => {
       const fetchContact = async () => {
         try {
           // Fetch the contact without the token (assuming no auth required for fetch)
-          const res = await axios.get(`http://localhost:5000/contacts`);
+          const res = await axios.get(`https://cms-backend-1-trzk.onrender.com/contacts`);
           const selectedContact = res.data.find((c) => c.id === parseInt(id));
           setContact(selectedContact || {});
         } catch (err) {
@@ -29,10 +29,10 @@ const AddEditContact = () => {
       if (id) {
         console.log("30",id)
         // Update contact without the token (assuming no auth required for update)
-        await axios.put(`http://localhost:5000/contacts/${id}`, contact);
+        await axios.put(`https://cms-backend-1-trzk.onrender.com/contacts/${id}`, contact);
       } else {
         // Create new contact without the token (assuming no auth required for create)
-        await axios.post('http://localhost:5000/contacts', contact);
+        await axios.post('https://cms-backend-1-trzk.onrender.com/contacts', contact);
       }
       navigate('/contacts');
     } catch (err) {

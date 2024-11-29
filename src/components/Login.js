@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/login', { email, password });
+      const res = await axios.post('https://cms-backend-1-trzk.onrender.com/login', { email, password });
       // Assuming a successful login, you might navigate the user or update UI.
       // Remove token-related logic
       navigate('/contacts'); // Navigate to the contacts page after login

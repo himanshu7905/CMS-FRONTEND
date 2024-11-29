@@ -10,7 +10,7 @@ const ContactList = () => {
     const fetchContacts = async () => {
       try {
         // Assuming the backend no longer requires JWT for fetching contacts
-        const res = await axios.get('http://localhost:5000/contacts');
+        const res = await axios.get('https://cms-backend-1-trzk.onrender.com/contacts');
         setContacts(res.data);
       } catch (err) {
         console.error(err);
@@ -22,7 +22,7 @@ const ContactList = () => {
   const handleDelete = async (id) => {
     try {
       // Assuming the backend no longer requires JWT for deleting contacts
-      await axios.delete(`http://localhost:5000/contacts/${id}`);
+      await axios.delete(`https://cms-backend-1-trzk.onrender.com/contacts/${id}`);
       setContacts(contacts.filter((contact) => contact.id !== id));
     } catch (err) {
       console.error(err);
